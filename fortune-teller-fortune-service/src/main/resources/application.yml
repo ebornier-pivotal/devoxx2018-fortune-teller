@@ -1,0 +1,26 @@
+server:
+   port: 8081
+
+spring:
+#  cloud:
+#    services:
+#      registrationMethod: route 
+  data:
+    mongodb.uri: mongodb://pivotal:pivotal123@35.197.213.68:27017/pivotal
+    mongo.repositories.enabled: true
+
+security:
+  basic:
+    enabled: false
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG    
+
+---
+
+spring:
+  profiles: c2c
+  cloud:
+    services:
+      registrationMethod: direct

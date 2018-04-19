@@ -1,0 +1,7 @@
+credentials.yml
+fortune-teller-fortune-service/target/
+fortune-teller-gateway/target/
+fortune-teller-ui/target/
+fortune-teller-ui/.settings
+fortune-teller-ui/.project
+fortune-teller-ui/.classpath

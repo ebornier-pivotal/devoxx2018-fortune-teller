@@ -1,0 +1,15 @@
+---
+applications:
+- name: fortune-teller-fortune-service
+  hosts:
+    - fortune-teller-fortune-service
+  services:
+   - config-server
+   - service-registry
+   - circuit-breaker
+   - mongodb
+  memory: 1G 
+  instances: 2
+  no-route: true
+  env:
+   SPRING_PROFILES_ACTIVE: c2c

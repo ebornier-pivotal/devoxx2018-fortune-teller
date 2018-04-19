@@ -1,0 +1,64 @@
+---
+resources:
+
+- name: cloud-native-tour-repo
+  type: git
+  source:
+    uri: https://github.com/ebornier-pivotal/devoxx2018-fortune-teller.git 
+
+- name: cf
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-organization}}
+    space: {{cf-space}}
+    skip_cert_check: true
+
+jobs:
+
+- name: create-netflix-services 
+  serial: true
+  public: true # cf does not shows auth. logs so it is ok
+  plan:
+  - get: cloud-native-tour-repo
+    trigger: true
+  - task: create-services 
+    file: cloud-native-tour-repo/ci/create-services.yml
+    params:
+      CF_API: {{cf-api}}
+      CF_USERNAME: {{cf-username}}
+      CF_PASSWORD: {{cf-password}}
+      CF_ORGANIZATION: {{cf-organization}}
+      CF_SPACE: {{cf-space}}
+
+- name: fortune-teller-fortune-service
+  serial: true
+  public: true # cf does not shows auth. logs so it is ok
+  plan:
+  - get: cloud-native-tour-repo
+    trigger: true
+    passed: [ create-netflix-services ]
+  - task: build
+    file: cloud-native-tour-repo/fortune-teller-fortune-service/ci/build.yml
+  - put: cf
+    params:
+      current_app_name: fortune-teller-fortune-service
+      manifest: cloud-native-tour-repo/fortune-teller-fortune-service/manifest.yml
+      path: build/fortune-teller-fortune-service-0.0.1-SNAPSHOT.jar
+
+- name: fortune-teller-ui
+  serial: true
+  public: true # cf does not shows auth. logs so it is ok
+  plan:
+  - get: cloud-native-tour-repo
+    trigger: true
+    passed: [ create-netflix-services ]
+  - task: build
+    file: cloud-native-tour-repo/fortune-teller-ui/ci/build.yml
+  - put: cf
+    params:
+      current_app_name: fortune-teller-ui
+      manifest: cloud-native-tour-repo/fortune-teller-ui/manifest.yml
+      path: build/fortune-teller-ui-0.0.1-SNAPSHOT.jar

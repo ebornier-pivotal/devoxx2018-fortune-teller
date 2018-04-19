@@ -1,0 +1,32 @@
+
+#greeting: Hello Local
+
+spring:
+  cloud:
+    services:
+      registrationMethod: route 
+
+
+eureka:
+  client:
+   registryFetchIntervalSeconds: 5
+
+fortunes:
+  ribbon:
+   ServerListRefreshInterval: 5000
+
+security:
+  basic:
+    enabled: false
+
+endpoints:
+  health:
+    sensitive: false
+---
+
+spring:
+  profiles: c2c
+  cloud:
+    services:
+      registrationMethod: direct 
+

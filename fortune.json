@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f3"},"text":"People are naturally attracted to you.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f4"},"text":"You learn from your mistakes... You will learn a lot today.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f5"},"text":"If you have something good in your life, don't let it go!","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f6"},"text":"What ever you're goal is in life, embrace it visualize it, and for it will be yours.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f7"},"text":"Your shoes will make you happy today.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f8"},"text":"You cannot love life until you live the life you love.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93f9"},"text":"Be on the lookout for coming events; They cast their shadows beforehand.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93fa"},"text":"Land is always on the mind of a flying bird.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93fb"},"text":"The man or woman you desire feels the same about you.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+{"_id":{"$oid":"5ab4f455efeb65000d3e93fc"},"text":"Meeting adversity well is the source of your strength.","_class":"io.spring.cloud.samples.fortuneteller.fortuneservice.domain.Fortune"}
+
